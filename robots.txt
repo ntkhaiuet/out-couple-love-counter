@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /login
 
-Sitemap: https://ntkhaiuet.github.io/out-couple-love-counter//sitemap.xml
+Sitemap: https://khaitrang.click/sitemap.xml
