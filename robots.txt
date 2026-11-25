@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /login
 
-Sitemap: https://ktpc.site/sitemap.xml
+Sitemap: https://ntkhaiuet.github.io/out-couple-love-counter//sitemap.xml
