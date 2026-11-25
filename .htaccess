@@ -1,0 +1,26 @@
+# Dùng cho hosting Apache/cPanel (file được copy vào thư mục out khi build tĩnh)
+Options -Indexes
+
+# Ép dùng HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Trang 404
+ErrorDocument 404 /404.html
+
+# Nén file
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache file build có hash (an toàn vì tên file đổi mỗi lần build)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(js|css|woff2|svg|png|jpg|jpeg|webp|ico)$">
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+  </FilesMatch>
+</IfModule>
